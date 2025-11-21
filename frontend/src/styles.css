@@ -1,0 +1,208 @@
+:root {
+  --bg: var(--tg-theme-bg-color, #fff);
+  --text: var(--tg-theme-text-color, #000);
+  --button: var(--tg-theme-button-color, #3390ec);
+  --button-text: var(--tg-theme-button-text-color, #fff);
+  --secondary: var(--tg-theme-secondary-bg-color, #f0f0f0);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  padding: 16px;
+}
+
+.app {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* Game Info */
+.game-info {
+  display: flex;
+  gap: 16px;
+  padding: 12px;
+  background: var(--secondary);
+  border-radius: 8px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  flex-wrap: wrap;
+}
+
+/* Trick Display */
+.trick {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.trick-card {
+  padding: 16px;
+  background: var(--secondary);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.trick-card.active {
+  border: 2px solid var(--button);
+}
+
+.player-name {
+  font-size: 12px;
+  opacity: 0.7;
+  margin-bottom: 8px;
+}
+
+.card-display {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.card-placeholder {
+  font-size: 28px;
+  opacity: 0.3;
+}
+
+/* Hand */
+.hand {
+  margin-top: 24px;
+}
+
+.suit-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.suit-icon {
+  font-size: 24px;
+  width: 32px;
+  text-align: center;
+}
+
+.cards {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.card {
+  padding: 8px 12px;
+  background: var(--secondary);
+  border: 1px solid transparent;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.card.valid {
+  background: var(--button);
+  color: var(--button-text);
+}
+
+.card.valid:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.card:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Bidding */
+.bid-panel {
+  padding: 16px;
+  background: var(--secondary);
+  border-radius: 8px;
+  margin: 16px 0;
+}
+
+.bid-panel h3 {
+  margin-bottom: 12px;
+  font-size: 16px;
+}
+
+.bids {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+  gap: 8px;
+}
+
+.bid-btn {
+  padding: 12px;
+  background: var(--button);
+  color: var(--button-text);
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.bid-btn.pass {
+  background: var(--secondary);
+  color: var(--text);
+  border: 1px solid var(--button);
+}
+
+/* Call Partner */
+.call-panel {
+  padding: 16px;
+  background: var(--secondary);
+  border-radius: 8px;
+}
+
+.call-panel h3 {
+  margin-bottom: 16px;
+}
+
+.card-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.suit-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.suit-label {
+  font-size: 20px;
+  width: 30px;
+}
+
+/* States */
+.waiting, .loading, .error, .game-over {
+  text-align: center;
+  padding: 24px;
+  font-size: 14px;
+}
+
+.error {
+  color: #d32f2f;
+}
+
+.game-over h2 {
+  margin-bottom: 16px;
+}
+
+.scores {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 16px;
+}
